@@ -5,7 +5,7 @@
 #include<iostream>
 #include<string.h>
 using namespace std;
-class a                                         //base class a
+class a                                         	//base class a
 {
 	private:
 		int iX;
@@ -23,26 +23,26 @@ class a                                         //base class a
 	    int iZ=500;	
 };
 int a::iY=10;
-int sum()                                       //calling function sum
+int sum()                                       	//calling function sum
 {
 	int iL=100;
 	cout<<"Declared the sum function as friend of class 'a' and printing the private variable 'l'"<<endl;
 	cout<<"value of l is : "<<iL<<endl;
 	return iL;
 }
-class base										//base class			
+class base						//base class			
 {
     public:
-        base()									//base class constructor
+        base()						//base class constructor
         {
             cout<<"base class constructor"<<endl;
         }
-        virtual void function()					//virtual member function
+        virtual void function()				//virtual member function
         {
             int iX=10;
             cout<<"base class function value:"<<iX<<endl;
         }
-        virtual ~base()							//virtual destructor
+        virtual ~base()					//virtual destructor
         {
             cout<<"base class destructor"<<endl;
         }
@@ -50,7 +50,7 @@ class base										//base class
 class derived:public base			
 {
     public:
-        derived()								//derived class constructor
+        derived()					//derived class constructor
         {
             cout<<"derived class constructor"<<endl;
         }
@@ -59,7 +59,7 @@ class derived:public base
            int iY=20;
            cout<<"derived class function value:"<<iY<<endl;
         }
-        ~derived()								//derived destructor
+        ~derived()					//derived destructor
         {
             cout<<"derived class destructor"<<endl;
         }
@@ -68,7 +68,7 @@ int main(int argc,char *argv[])
 {
     if(argc>=2)
     {
-	    if(strcmp(argv[1],"-h")==0)	  			//if loop for comparing the input string with "-h"				
+	    if(strcmp(argv[1],"-h")==0)	  		//if loop for comparing the input string with "-h"				
 	    {
             cout<<"                                    USAGE                                          "<<endl;
             cout<<"	This program demonstrates the different ways to initialize	"<<endl;
@@ -77,23 +77,23 @@ int main(int argc,char *argv[])
 	    }
     }
     else
-	{   
+    {   
         a obj;
-	    //obj.iX;		                        //cannot access the private variable from class a
-	    cout<<"***** DIFFERENT WAYS TO INITIALIZE THE PRIVATE VARIABLES IN A CLASS *****"<<endl;
-	    cout<<"------------------------------------------------------------------------"<<endl;
-	    cout<<"x is not accessible because it is private variable of class a"<<endl;
-	    obj.iY;
-	    cout<<"value of y is : "<<obj.iY<<endl;
-	    //obj.iZ;		                        //cannot access the protected variable of class a
-	    cout<<"z is not accessible because it is protected variable of class a"<<endl;
-	    obj.test();
-	    sum();
-	    cout<<"------------------------------------------------------------------------"<<endl;
-	    cout<<"***** ORDER OF THE CONSTRUCTION AND DESTRUCTION OF OBJECTS WITH AND WITHOUT VIRTUAL ****"<<endl;
-        base *b=new derived();					//creating the derived class dynamically using base pointer
+	//obj.iX;		                        //cannot access the private variable from class a
+	cout<<"***** DIFFERENT WAYS TO INITIALIZE THE PRIVATE VARIABLES IN A CLASS *****"<<endl;
+	cout<<"------------------------------------------------------------------------"<<endl;
+	cout<<"x is not accessible because it is private variable of class a"<<endl;
+	obj.iY;
+	cout<<"value of y is : "<<obj.iY<<endl;
+	//obj.iZ;		                        //cannot access the protected variable of class a
+	cout<<"z is not accessible because it is protected variable of class a"<<endl;
+	obj.test();
+	sum();
+	cout<<"------------------------------------------------------------------------"<<endl;
+	cout<<"***** ORDER OF THE CONSTRUCTION AND DESTRUCTION OF OBJECTS WITH AND WITHOUT VIRTUAL ****"<<endl;
+        base *b=new derived();				//creating the derived class dynamically using base pointer
         b->function();
-        derived d;								//derived object creation
+        derived d;					//derived object creation
         d.function();
-	}
+    }
 }
