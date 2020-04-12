@@ -7,7 +7,7 @@
 using namespace std;
 class student
 {
-    private:
+    	private:
 	    int *iRollno;									//integer pointer declaration
 	    char cName[20];									//char array declaration
 	public:
@@ -15,7 +15,7 @@ class student
 	    {
 	        cout<<"default constructor is called"<<endl;
 	    }
-	    student(char *cStudname)							//parameterized constructor
+	    student(char *cStudname)								//parameterized constructor
 	    {
 	        strcpy(cName,cStudname);
 	        cout<<"parameterized constructor is called"<<endl;
@@ -24,7 +24,7 @@ class student
 	    {
 	        cout<<"student name:"<<cName<<endl;
 	    }
-	    student operator+(student s)					//+ operator overloading 
+	    student operator+(student s)							//+ operator overloading 
 	    {
 	        student temp=cName;
 	        strcat(temp.cName,s.cName);
@@ -50,7 +50,7 @@ int main(int argc,char *argv[])
 {
     if(argc>=2)
     {
-	    if(strcmp(argv[1],"-h")==0)	 					//if loop for comparing the input string with "-h"			 				
+	    if(strcmp(argv[1],"-h")==0)	 							//if loop for comparing the input string with "-h"			 				
 	    {
             cout<<"                       		USAGE                                       "<<endl;
             cout<<" This program uses integer pointer,character array and describes them using "<<endl;
@@ -59,10 +59,10 @@ int main(int argc,char *argv[])
     }
     else
     {
-        student obj("  sravani");						//calling parameterized constructor
+        student obj("  sravani");								//calling parameterized constructor
         student obj1("	vaka");
         student obj2;
-        obj2=obj1+obj;									//concatenationg two objects
+        obj2=obj1+obj;										//concatenationg two objects
         obj2.display();
         increment();
     }
