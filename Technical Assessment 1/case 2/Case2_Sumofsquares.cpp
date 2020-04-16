@@ -10,7 +10,7 @@ int sumofsquares(int iN)
 {
         int iI,iSum=0;							//intialialized the required variables							
         for(iI=1;iI<=iN;iI++) 						//for loop to calculate the sum of series up to the nth term
-	    {
+	{
             iSum+=iI*iI;							
         }
         return iSum;  
@@ -26,13 +26,13 @@ int main(int argc,char *argv[])
             cout<<"output:30"<<endl;
 	    }
     }
-	else
-	{
-		int iN,iTotal;
-		cout<<"calculating the sum of the series (1*1)+(2*2)+(3*3)+(4*4)+(5*5)+...+(n*n):"<<endl;
-        cout<<"---------------------------------------------------------------------"<<endl;
-		cout<<"Enter the input:";
-		cin>>iN;
+    else
+    {
+	int iN,iTotal;
+	cout<<"calculating the sum of the series (1*1)+(2*2)+(3*3)+(4*4)+(5*5)+...+(n*n):"<<endl;
+       	cout<<"---------------------------------------------------------------------"<<endl;
+	cout<<"Enter the input:";
+	cin>>iN;
         iTotal=sumofsquares(iN); 
         cout<<"The sum of the above series is:"<<iTotal<<endl; 
     }
