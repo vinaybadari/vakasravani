@@ -11,13 +11,13 @@ class a                                         //base class a
 		int iX;
 		int iL;
 	public:
-		int test()                              //test function for accessing private variable
+		int test()                      //test function for accessing private variable
 		{
 			iX=30;
 			cout<<"accessing the private variable 'x' using function"<<endl; 
 			cout<<"value of x is : "<<iX<<endl;
 		}
-		friend int sum();                       //friend function for accessing the members outside the class
+		friend int sum();               //friend function for accessing the members outside the class
 	protected:
 	    int iZ=500;	
 };
@@ -28,19 +28,19 @@ int sum()                                       //calling function sum
 	cout<<"value of l is : "<<iL<<endl;
 	return iL;
 }
-class base										//base class			
+class base					//base class			
 {
     public:
-        base()									//base class constructor
+        base()					//base class constructor
         {
             cout<<"base class constructor"<<endl;
         }
-        virtual void function()					//virtual member function
+        virtual void function()			//virtual member function
         {
             int iV=10;
             cout<<"base class function value:"<<iV<<endl;
         }
-        virtual ~base()							//virtual destructor
+        virtual ~base()				//virtual destructor
         {
             cout<<"base class destructor"<<endl;
         }
@@ -48,7 +48,7 @@ class base										//base class
 class derived:public base			
 {
     public:
-        derived()								//derived class constructor
+        derived()				//derived class constructor
         {
             cout<<"derived class constructor"<<endl;
         }
@@ -57,42 +57,41 @@ class derived:public base
            int iL=20;
            cout<<"derived class function value:"<<iL<<endl;
         }
-        ~derived()								//derived destructor
+        ~derived()				//derived destructor
         {
             cout<<"derived class destructor"<<endl;
         }
 };
 int main(int argc,char *argv[])
 {
-    if(argc>=2)
-    {
-	    if(strcmp(argv[1],"-h")==0)	  			//if loop for comparing the input string with "-h"				
+    	if(argc>=2)
+    	{
+	    if(strcmp(argv[1],"-h")==0)	  	//if loop for comparing the input string with "-h"				
 	    {
             cout<<"                                    USAGE                                          "<<endl;
             cout<<"	This program demonstrates the different ways to initialize	"<<endl;
             cout<<"	the private variables in a class and usage of constructing 	"<<endl;
             cout<<" 	and destructing objects with and without virtual "<<endl;
 	    }
-    }
-    else
+    	}
+    	else
 	{   
-        a obj;
-	    //obj.iX;		                        //cannot access the private variable from class a
-	    cout<<"***** DIFFERENT WAYS TO INITIALIZE THE PRIVATE VARIABLES IN A CLASS *****"<<endl;
-	    cout<<"------------------------------------------------------------------------"<<endl;
-	    cout<<"x is not accessible because it is private variable of class a"<<endl;
-	    //obj.iY;
-	    cout<<"L is not accessible because it is private variable of class a"<<endl;
-	    //obj.iZ;		                        //cannot access the protected variable of class a
-	    cout<<"z is not accessible because it is protected variable of class a"<<endl;
-	    obj.test();
-	    sum();
-	    cout<<"------------------------------------------------------------------------"<<endl;
-	    cout<<"***** ORDER OF THE CONSTRUCTION AND DESTRUCTION OF OBJECTS WITH AND WITHOUT VIRTUAL ****"<<endl;
-        base *b=new derived();					//creating the derived class dynamically using base pointer
-        b->function();
-        derived d;								//derived object creation
-        d.function();
-        delete b;								//freeing the allocated memory
+        	a obj;
+	    	//obj.iX;		         //cannot access the private variable from class a
+	    	cout<<"***** DIFFERENT WAYS TO INITIALIZE THE PRIVATE VARIABLES IN A CLASS *****"<<endl;
+	    	cout<<"------------------------------------------------------------------------"<<endl;
+	    	cout<<"x is not accessible because it is private variable of class a"<<endl;
+	    	cout<<"L is not accessible because it is private variable of class a"<<endl;
+	    	//obj.iZ;		         //cannot access the protected variable of class a
+	    	cout<<"z is not accessible because it is protected variable of class a"<<endl;
+	   	obj.test();
+	    	sum();
+	    	cout<<"------------------------------------------------------------------------"<<endl;
+	    	cout<<"***** ORDER OF THE CONSTRUCTION AND DESTRUCTION OF OBJECTS WITH AND WITHOUT VIRTUAL ****"<<endl;
+        	base *b=new derived();		//creating the derived class dynamically using base pointer
+        	b->function();
+        	derived d;			//derived object creation
+        	d.function();
+        	delete b;			//freeing the allocated memory
 	}
 }
