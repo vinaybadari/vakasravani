@@ -1,3 +1,7 @@
+/*case 7:notes.ini configuration operations*/
+/*filename	:Case7_notesconfig.cpp
+  Author 	:Naga sravani
+  Date   	:16/04/2020*/
 #include<iostream>
 #include<list>
 #include<fstream>
@@ -12,45 +16,45 @@ private:
     char cValue[100];
 public:
 	void getkey()
-    {
-        cout<<"Enter key:";
-        getchar();
-        cin.get(cKey,500,'\n');
-    }
+    	{
+        	cout<<"Enter key:";
+        	getchar();
+        	cin.get(cKey,500,'\n');
+    	}
 	void getvalue()
-    {
-        cout<<"Enter value:";
-        getchar();
-        cin.get(cValue,100,'\n');
-    }
+    	{
+        	cout<<"Enter value:";
+        	getchar();
+        	cin.get(cValue,100,'\n');
+    	}
 	char* outkey()
-    {
-        return cKey;
-    }
+    	{
+        	return cKey;
+   	}
 	char* outvalue()
-    {
-        return cValue;
-    }
-    void display()                                      //function for displaying key and value
-    {
-        cout<<cKey<<"\t"<<cValue<<endl;
-    }
+    	{
+        	return cValue;
+    	}
+    	void display()                                     //function for displaying key and value
+    	{
+        	cout<<cKey<<"\t"<<cValue<<endl;
+    	}
 };
 void removefile()
 {
     note s;
     int iCount;
-    ifstream in("notes.ini",ios::in);                       //opens the file for input operations
+    ifstream in("notes.ini",ios::in);                     //opens the file for input operations
     while(1)
     {
-        in.read((char*)&s,sizeof(s));                       //reading the contents in file
+        in.read((char*)&s,sizeof(s));                     //reading the contents in file
         iCount++;
-        if(in.eof())break;                                   //checking for end of file
+        if(in.eof())break;                                //checking for end of file
     }
     if(iCount==0)
     {
         cout<<"file is removed"<<endl;
-        remove("notes.ini");                                 //removes the file
+        remove("notes.ini");                             //removes the file
     }
 }
 int searchupdate(list<note> &std,char* cOption)
@@ -177,7 +181,6 @@ void searching(list<note> &std)
     else
         cout<<"Enter k or v:"<<endl;
 }
-
 int main(int argc,char* argv[])
 {
     if(argc==2)
