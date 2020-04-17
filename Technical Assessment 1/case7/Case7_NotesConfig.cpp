@@ -1,18 +1,15 @@
 /*case 7:notes.ini configuration operations*/
-
- /*filename	:Case7Notesconfig.cpp
+/*filename	:Case7Notesconfig.cpp
   Author 	:Naga Sravani
   Date   	:16/04/2020*/
-  
 #include<iostream>
 #include<string.h>
 #include<stdio.h>
 #include<stdlib.h>
 using namespace std;
-
 class Notes{
 private:
-		//declaring variables for the file
+	//declaring variables for the file
         char cPrg[300];
         char cDir[300];
         int iKit;
@@ -25,19 +22,18 @@ private:
         int iDst;
         int iDstlaw;
         char cFiledir[300];
-
-		//waitforEnter function, it waits for the user to give enter, it help in ease of execution step by step
-        void waitForEnter(){
+	//waitforEnter function, it waits for the user to give enter, it help in ease of execution step by step
+        void waitForEnter()
+	{
                 cout<<"\n\n\n Press enter to go back \n\n";
                 cin.get();
         }
-		
-		//addNotesInfo function, adds the data in notes.ini if the file does not exists it will create one.
-		void addNotesInfo(void)
-		{
+	//addNotesInfo function, adds the data in notes.ini if the file does not exists it will create one.
+	void addNotesInfo(void)
+	{
                 char moreRecords;  
                 //adds records till while loop is true or moreRecords == 'y'
-				do{              
+		do{              
                         cout<<"\n----------------------------------------";
                         cout<<"\n NotesProgram= [give path]";
                         cin>>cPrg;
@@ -63,10 +59,8 @@ private:
                         cin>>iDstlaw;                        
                         cout<<"\n FileDlgDirectory= [give path]";
                         cin>>cFiledir;
-                        
                         cout<<"\n----------------------------------------";
-
-                        char ch;
+			char ch;
                         cout<<"\nEnter 'y' to save above information\n";
                         cin>>ch;
                         //adds data if the condition is 'y'
@@ -122,10 +116,7 @@ private:
                 fclose(file);
                 waitForEnter();
         }
- 		
- 	
-		
-public:
+ 	public:
 		//options function, used to take specific requests from the user and perform accordingly
         void options(void){
                 while(true){
@@ -161,9 +152,6 @@ public:
                 }
         }
 };
-        
-        
-
 int main(int argc,char *argv[]){
 	if(argc==2) 
 	{
