@@ -7,7 +7,7 @@
   filename	        : Case3_VariableScope,ModifierTypes,Storageclasses
   Author 	        : Naga sravani
   Creation Date   	: 09/04/2020
-  Modified Date     : 16/04/2020 */
+  Modified Date     	: 16/04/2020 */
 
 #include<iostream>
 #include<string.h>
@@ -59,7 +59,7 @@ void modifier()
 //storage class function
 void storage()                      	 
 {
-	int iVar=12;
+    int iVar=12;
     float fVar=4.5;
     //addition of two variable with auto storage class as return type
     auto  fVar1=iVar+fVar;           		 
@@ -75,7 +75,6 @@ void storage()
     cout<<"extern storage value after initialization is                         : "<<iExtern<<endl;
     int iTotalExtern=iExtern1+iExtern;
     cout<<"value of totalextern after adding extern global & local variable is  : "<<iTotalExtern<<endl;
-    
 }
 //static storage class function
 void staticstorage()                	
