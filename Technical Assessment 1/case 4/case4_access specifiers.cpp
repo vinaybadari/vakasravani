@@ -3,8 +3,8 @@
 /*purpose			: Program to demonstrate access specifiers
   filename			: case4_accessspecifiers
   Author 			: Naga sravani
-  creation Date   	: 09/04/2020 
-  Modified Date		: 16/04/2020 */
+  creation Date   		: 09/04/2020 
+  Modified Date			: 16/04/2020 */
   
 #include<iostream>
 #include<string.h>
@@ -14,7 +14,7 @@ class base
 {
  	private:
         	int iPrivatedata;
-    public:
+    	public:
             int iPublicdata;
  	protected:
  	    	int iProtecteddata;
@@ -31,8 +31,8 @@ class derived:private base
  	public:
  	    void show()
  	    {
- 	    	    cout<<" ACCESSMODE AS PRIVATE "<<endl;
- 	    	    //cout<<" value of iPrivatedata is "<<iPrivatedata<<endl;
+ 	    	cout<<" ACCESSMODE AS PRIVATE "<<endl;
+ 	    	//cout<<" value of iPrivatedata is "<<iPrivatedata<<endl;
             	cout<<" iPrivatedata cannot be accessible because it is declared as private "<<endl;
             	cout<<" value of iPublicdata is     "<<iPublicdata<<endl;
             	cout<<" value of iProtecteddata is  "<<iProtecteddata<<endl;
@@ -44,8 +44,8 @@ class derived1:protected base
  	public:
  	    void show()
  	    {
- 	            cout<<" ACCESSMODE AS PROTECTED "<<endl;
- 	            //cout<<" value of iPrivatedata is "<<iPrivatedata<<endl;
+ 	        cout<<" ACCESSMODE AS PROTECTED "<<endl;
+ 	        //cout<<" value of iPrivatedata is "<<iPrivatedata<<endl;
             	cout<<" iPrivatedata cannot be accessible because it is declared as private "<<endl;
             	cout<<" value of iPublicdata is     "<<iPublicdata<<endl;
             	cout<<" value of iProtecteddata is  "<<iProtecteddata<<endl;
@@ -57,8 +57,8 @@ class derived2:public base
  	public:
  	    void show()
  	    {
- 	            cout<<" ACCESSMODE AS PUBLIC "<<endl;
- 	            //cout<<" value of iPrivatedata is "<<iPrivatedata<<endl;
+ 	        cout<<" ACCESSMODE AS PUBLIC "<<endl;
+ 	        //cout<<" value of iPrivatedata is "<<iPrivatedata<<endl;
             	cout<<" iPrivatedata cannot be accessible because it is declared as private "<<endl;
             	cout<<" value of iPublicdata is     "<<iPublicdata<<endl;
             	cout<<" value of iProtecteddata is  "<<iProtecteddata<<endl;
@@ -69,7 +69,7 @@ int main(int argc,char *argv[])
 {
     if(argc==2)
     {
-        //if loop for comparing the input string with "-h"	
+            //if loop for comparing the input string with "-h"	
 	    if(strcmp(argv[1],"-h")==0)	 			 				
 	    {
             cout<<"                       			USAGE                                       "<<endl;
@@ -79,7 +79,7 @@ int main(int argc,char *argv[])
     else
     {
         //derived object creation
-	    derived a;						
+	derived a;						
     	derived1 b;
     	derived2 c;
     	//accessing data using object
@@ -88,6 +88,4 @@ int main(int argc,char *argv[])
     	c.show();
     	return 0;
     }
-}	
-	  
-
+}
