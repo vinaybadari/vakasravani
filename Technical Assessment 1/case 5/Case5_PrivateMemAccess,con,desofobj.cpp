@@ -2,12 +2,12 @@
 1.Different way to initialize the private member variables in a class
 2.order of the construction and destruction of objects with and without virtual */
 
-/*Purpose           : Program to demonstrate the different ways of initializing the private variables and 
-					  order of constructing and destructing objects with and without virtual
+/*Purpose           	: Program to demonstrate the different ways of initializing the private variables and 
+			  order of constructing and destructing objects with and without virtual
   filename	        : Case5_PrivateMemAccess&con&desofobj
   Author 	        : Naga sravani
   Creation Date   	: 09/04/2020
-  Modified Date     : 16/04/2020 */
+  Modified Date     	: 16/04/2020 */
 
 #include<iostream>
 #include<string.h>
@@ -17,15 +17,15 @@ class employee
 	private:
 		int iID;
 		string sName;
-	    float fSalary;
+	        float fSalary;
 	public:
 	    //parameterized constructor
 	    employee(int i,string n,float s)
-		{
+	    {
 		      iID=i;
 		      sName=n;
 		      fSalary=s;
-		}
+	    }
 	    void display()
 	    {
 	        cout<<"employee id      : "<<iID<<endl;
@@ -91,9 +91,9 @@ int main(int argc,char *argv[])
         employee e1(51865102,"sravani",18000);
         cout<<"****  DIFFERENT WAYS TO INITIALIZE PRIVATE VARIABLES IN A CLASS ****"<<endl;
         e1.display();
-	    cout<<"---------------------------------------------------------------------------------"<<endl;
-	    cout<<"**** ORDER OF THE CONSTRUCTION AND DESTRUCTION OF OBJECTS WITH AND WITHOUT VIRTUAL ****"<<endl;
-	    //creating the derived class dynamically using base pointer
+	cout<<"---------------------------------------------------------------------------------"<<endl;
+	cout<<"**** ORDER OF THE CONSTRUCTION AND DESTRUCTION OF OBJECTS WITH AND WITHOUT VIRTUAL ****"<<endl;
+	//creating the derived class dynamically using base pointer
         base *b=new derived();					
         b->function();
         //derived object creation
